@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter Word para Excel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Converter Word para Excel</h1>
+    <p>Arraste e solte arquivos ou clique para selecionar. <br> É aconselhável que no arquivo original as colunas estejam separadas por ;</p>
+    
+    <div id="drop-area" class="drop" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)" onclick="selectFiles()">
+        Soltar arquivos aqui ou Clique para selecionar
+        <input type="file" id="file-input" multiple accept=".doc,.docx" onchange="handleFiles(this.files)">
+    </div>
+    
+    <div id="file-list" class="grid"></div>
+    
+    <div id="buttons-container" class="buttons">
+        <button id="select-more" onclick="selectFiles()">Selecionar Mais</button>
+        <button id="sort-files" onclick="sortFiles()">Ordenar</button>
+        <button id="convert" onclick="convertFiles()">Converter</button>
+        <p>Ao clicar em converter veja nos Downloads se já não foi baixado, caso não tenha sido clique novamente</p>
+    </div>
+    
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+</body>
+</html>
